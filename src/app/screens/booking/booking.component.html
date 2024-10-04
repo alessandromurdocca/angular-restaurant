@@ -1,0 +1,13 @@
+<app-hero [heroTitle]="'BOOKING A TABLE'"></app-hero>
+
+<div class="my-4">
+  <form class="grid grid-cols-2 gap-4 justify-items-center" #bookingTableForm="ngForm" (ngSubmit)="onSubmitForm()">
+    <input class="col-span-1 w-full" type="text" name="name" placeholder="Name" [(ngModel)]="form.name">
+    <input class="col-span-1 w-full" type="text" name="surname" placeholder="Surname" [(ngModel)]="form.surname">
+    <input class="col-span-1 w-full" type="number" name="people" placeholder="How many people" [(ngModel)]="form.people">
+    <textarea class="col-span-1 w-full"  name="anyRequest" placeholder="Any request?" [(ngModel)]="form.anyRequest"></textarea>
+    <button class="col-span-2 p-4 bg-primary text-white w-full max-w-64" type="submit">Invia</button>
+
+  </form>
+
+</div>

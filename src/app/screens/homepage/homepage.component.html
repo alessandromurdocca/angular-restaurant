@@ -1,0 +1,14 @@
+<div class="flex-1 w-full bg-gray-100 ">
+  <app-hero [isHomepage]="true"></app-hero>
+  <div class="my-4 w-full grid grid-cols-2 px-4 py-2 justify-items-center gap-2 lg:grid-cols-4">
+    @for (service of services; track $index) {
+    <app-service-card [serviceTitle]="service.serviceTitle" [serviceSubtitle]="service.serviceSubtitle" [icon]="service.icon" />
+
+    }
+  </div>
+  <app-about-us />
+  <app-food-menu [elements]="menuElements"/>
+  <app-form [typeForm]="'map'"></app-form>
+  <app-chefs></app-chefs>
+  <app-testimonials></app-testimonials>
+</div>

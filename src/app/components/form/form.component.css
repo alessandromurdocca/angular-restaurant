@@ -1,0 +1,19 @@
+.container{
+  @apply w-full flex flex-col items-center justify-between my-6 bg-white lg:flex-row
+}
+
+.mapContainer{
+  @apply w-full h-full flex items-center justify-center p-4 lg:w-1/2
+}
+
+.formContainer{
+  @apply w-full p-5 animate-fade-up animate-ease-in lg:w-1/2;
+}
+
+.inputForm{
+  @apply border border-gray-400 h-12 rounded-sm p-2;
+}
+
+.textAreaForm{
+  @apply border border-gray-400 col-span-2 h-24 rounded-sm p-4;
+}

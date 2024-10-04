@@ -1,0 +1,11 @@
+<div *ngIf="!route.subpaths then singleElement; else haveChildrenRoutes"></div>
+
+<ng-template #singleElement>
+  <a [routerLink]="route.path" routerLinkActive="active" ariaCurrentWhenActive="page"
+     class="text-white font-heebo font-medium mx-4 text-sm">{{ route.label | uppercase }}
+  </a>
+</ng-template>
+
+<ng-template #haveChildrenRoutes>
+ <p>pippo</p>
+</ng-template>

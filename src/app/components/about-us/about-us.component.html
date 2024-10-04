@@ -1,0 +1,32 @@
+<div class="w-full flex flex-col  items-center justify-between lg:flex-row">
+  <div class="w-full lg:w-1/2"><app-gallery-images></app-gallery-images> </div>
+  <div class="w-full p-8 lg:w-1/2  lg:p-0">
+    <div class="w-full flex flex-row items-center ">
+      <span class="text-secondary font-pacifico font-bold">About Us</span>
+      <div class="ml-8 w-16 h-[3px] bg-secondary"></div>
+    </div>
+    <h2 class="text-3xl font-nunito font-extrabold my-3">Welcome to 🍴 Restoran</h2>
+    <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos erat ipsum et lorem et
+      sit, sed stet lorem sit.
+      <br>
+      Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et
+      lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
+    </p>
+    <div class="w-full flex flex-row justify-between my-4">
+      <div class="w-1/2 flex items-center">
+        <hr class="w-[3px] h-full bg-secondary mr-3 " />
+        <span class="text-5xl font-bold font-nunito text-secondary mr-5">{{experienceAnimatedNumber | number:'1.0-0'}}</span>
+        <div class="flex flex-col"><span>years</span><span class="uppercase font-semibold">Experience</span></div>
+      </div>
+
+      <div class="w-1/2 flex items-center">
+        <hr class="w-[3px] h-full bg-secondary mr-3 " />
+        <span class="text-5xl font-bold font-nunito text-secondary mr-5">{{masterchefAnimatedNumber | number:'1.0-0'}}</span>
+        <div class="flex flex-col"><span>popular</span><span class="uppercase font-semibold">Master Chef</span></div>
+      </div>
+
+    </div>
+    <app-button [title]="'Read more'"></app-button>
+  </div>
+
+</div>

@@ -1,0 +1,7 @@
+<app-hero [heroTitle]="'Service'"></app-hero>
+<div class="my-4 w-full grid gap-2 grid-cols-2 px-4 py-2 justify-items-center md:grid-cols-4">
+  @for (service of services; track $index) {
+  <app-service-card [serviceTitle]="service.serviceTitle" [serviceSubtitle]="service.serviceSubtitle" [icon]="service.icon" />
+
+  }
+</div>

@@ -1,0 +1,21 @@
+<div class="text-center mt-20 h-[500px]">
+  <app-line-with-text [text]="'Team Members'"></app-line-with-text>
+  <h2 class="text-4xl font-extrabold font-nunito">Our Master Chefs</h2>
+  <div class="grid grid-cols-1 gap-4 justify-items-center p-4 mb-9 lg:grid-cols-4">
+    @for (chef of allChefs; track $index) {
+    <div class="h-fit max-w-[500px] flex flex-col justify-center items-center bg-white px-10 py-4  lg:max-w-none hover:pb-0 "
+      (mouseover)="onMouseHover($index)" (mouseleave)="onMouseLeave()">
+      <img class="rounded-full mb-4" alt="immagine_chef" [src]="chef.chefImage" />
+      <span class="text-xl font-extrabold font-nunito">{{chef.name}}</span>
+      <span class="text-base font-nunito">{{chef.role}}</span>
+      <div class="mt-4 flex justify-end animate-fade-down animate-ease-linear" *ngIf="showElementIndex===$index" >
+        <div class="mx-2 bg-secondary h-9 w-7 rounded-t-xl"></div>
+        <div class="mx-2 bg-secondary h-9 w-7 rounded-t-xl"></div>
+        <div class="mx-2 bg-secondary h-9 w-7 rounded-t-xl"></div>
+      </div>
+    </div>
+
+    }
+
+  </div>
+</div>

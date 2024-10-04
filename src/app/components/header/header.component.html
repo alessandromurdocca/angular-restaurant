@@ -1,0 +1,35 @@
+<header
+  [ngClass]="isScrolled?'w-screen fixed z-50 p-0  animate-fade-down animate-ease-linear':'w-full  bg-slate-200 lg:px-24'">
+  <div [ngClass]="isScrolled?'px-8 py-2':'px-4 py-8'"
+    class="w-full flex flex-row justify-between items-center bg-primary  z-10">
+    <span class="text-secondary font-nunito font-extrabold text-4xl z-10"><fa-icon [icon]="faUtensil"></fa-icon>
+      {{siteTitle}}</span>
+    <div class="hidden lg:block z-10">
+      @for (route of routes; track $index) {
+      <app-navbar-single-item [route]="route"></app-navbar-single-item>
+
+      <!--  <a [routerLink]="route.path" routerLinkActive="active" ariaCurrentWhenActive="page"
+        class="text-white font-heebo font-medium mx-4 text-sm">{{route.label | uppercase}}</a> -->
+      }
+      <app-navigate-button [buttonTitle]="'BOOK A TABLE'" [pathLink]="'booking'"></app-navigate-button>
+    </div>
+    <div class="block border-[1px] border-gray-800 p-2 lg:hidden z-10" (click)="openHamburgerMenu()">
+      <fa-icon [icon]="faHamburgerMenu" class="text-3xl text-white "></fa-icon>
+      <div></div>
+    </div>
+  </div>
+  <ng-template *ngIf="hamburgerMenuIsOpen then hamburgerRoute"></ng-template>
+  <ng-template #hamburgerRoute>
+    <div class="flex flex-col  bg-primary px-2 py-4">
+      @for (route of routes; track $index) {
+      <app-navbar-single-item [route]="route"></app-navbar-single-item>
+
+      <!--  <a [routerLink]="route.path" routerLinkActive="active" ariaCurrentWhenActive="page"
+        class="text-white font-heebo font-medium mx-4 text-sm">{{route.label | uppercase}}</a> -->
+      }
+      <app-navigate-button [buttonTitle]="'BOOK A TABLE'" [pathLink]="'booking'"></app-navigate-button>
+    </div>
+  </ng-template>
+
+
+</header>

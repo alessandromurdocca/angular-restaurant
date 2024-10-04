@@ -1,0 +1,29 @@
+<ng-template *ngIf="isHomepage then homepageHero;else otherHero"></ng-template>
+
+<ng-template #homepageHero>
+  <div class="w-full flex flex-col px-20 justify-center items-center bgImage relative">
+    <div class="overlay"></div>
+    <div class="w-full flex flex-col items-center lg:flex-row relative z-10">
+      <div class="animate-fade-right animate-duration-[700ms] animate-ease-in text-center md:text-left lg:w-1/2">
+        <h1 class="text-white text-6xl font-nunito font-bold mt-20">Enjoy Our<br> Delicious Meal</h1>
+        <h2 class="my-4 text-white text-lg">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet
+          diam
+          et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</h2>
+        <app-button [title]="'BOOK A TABLE'"></app-button>
+      </div>
+      <div class="w-full flex justify-center my-10 p-16 lg:w-1/2 lg:p-2">
+        <img src="hero.png" class="animate-spin-slow w-full" />
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #otherHero>
+  <div class="w-full flex flex-col px-20 justify-center items-center bgImage relative">
+    <div class="overlay"></div>
+    <div class="flex flex-col justify-center items-center text-center py-20 z-10">
+      <h1 class="text-6xl font-nunito font-extrabold text-white mb-7 ">{{heroTitle}}</h1>
+      <app-breadcrumb></app-breadcrumb>
+    </div>
+  </div>
+</ng-template>

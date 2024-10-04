@@ -1,0 +1,5 @@
+<div class="flex flex-row">
+  @for (route of routesUrl; track $index) {
+  <span [hidden]="$index===0" class="text-white">/ </span><span class="uppercase font-nunito text-base text-secondary">{{route}}</span>
+  }
+</div>

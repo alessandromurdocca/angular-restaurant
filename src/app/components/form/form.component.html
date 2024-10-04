@@ -1,0 +1,62 @@
+<div *ngIf="formType==='image'; then formWithImage; else formWithMap"></div>
+
+
+<ng-template #formWithImage>
+
+  <div class="w-full flex flex-col items-center justify-between my-6 bg-primary lg:flex-row">
+    <div class="w-full h-full flex items-center justify-center lg:w-1/2">
+      <img src="https://picsum.photos/800/600" />
+    </div>
+    <div class="formContainer">
+      <app-line-with-text [text]="'Reservation'" [isOnlyOneSide]="'rigth'"
+        [elementPosition]="'left'"></app-line-with-text>
+      <h2 class="text-4xl text-white font-extrabold font-nunito mb-6 mt-3">Book A Table Online</h2>
+      <!-- <form class="grid grid-cols-2 gap-4">
+        <input [(ngModel)]="request.name" name="name" id="name" class="h-12 rounded-sm p-2" placeholder="Your Name"
+          type="text">
+        <input [(ngModel)]="request.email" name="email" id="email" class="h-12 rounded-sm p-2" placeholder="Your Email"
+          type="text">
+        <input [(ngModel)]="request.date" name="date" id="date" class="h-12 rounded-sm p-2" placeholder="Date & Time"
+          type="text">
+        <input [(ngModel)]="request.people" name="people" id="people" class="h-12 rounded-sm p-2" placeholder="People"
+          type="text">
+        <textarea [(ngModel)]="request.request" name="request" id="request" class="col-span-2 h-24 rounded-sm p-4"
+          placeholder="Special Request"></textarea>
+                 <app-button [title]="'Book now'"></app-button>
+ 
+        <button type="submit">Invia richiesta</button>
+
+      </form> -->
+    </div>
+  </div>
+
+</ng-template>
+
+<ng-template #formWithMap>
+
+  <div class="container">
+    <div class="mapContainer">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193597.03113662466!2d-74.16925208921953!3d40.69701928616164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20Stati%20Uniti!5e0!3m2!1sit!2sit!4v1726219282784!5m2!1sit!2sit"
+        width="800" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    
+    <div class="formContainer">
+      <form [formGroup]="formRequest" class="grid grid-cols-2 gap-4" (ngSubmit)="onSubmitForm()">
+        <input formControlName="name" name="name" id="name" class="inputForm" placeholder="Your Name" type="text">
+        <input formControlName="email" name="email" id="email" class="inputForm" placeholder="Your Email" type="email"
+          required>
+        <input formControlName="date" name="date" id="date" class="inputForm" placeholder="Date & Time" type="date">
+        <input formControlName="people" name="people" id="people" class="inputForm" placeholder="People" type="text"
+          required>
+        <textarea formControlName="request" name="request" id="request" class="textAreaForm"
+          placeholder="Special Request" required></textarea>
+        <!-- <app-button [title]="'Book now'"></app-button> -->
+        <button [class]="[!formRequest.valid?'opacity-30':'opacity-100', 'bg-blue-400 p-4']" type="submit"
+          [disabled]="!formRequest.valid">Invia richiesta</button>
+      </form>
+    </div>
+  </div>
+
+</ng-template>

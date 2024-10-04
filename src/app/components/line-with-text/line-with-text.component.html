@@ -1,0 +1,25 @@
+<div *ngIf="!isOnlyOneSide; then areBoth; else oneSide"></div>
+
+<ng-template #areBoth>
+  <div
+    [ngClass]="{'justify-start': elementPosition === 'left', 'justify-center': elementPosition === 'center', 'justify-end': elementPosition === 'rigth' }"
+    class="w-full flex flex-row items-center my-2">
+    <hr class="w-7 h-[3px] bg-secondary border-0" />
+    <span class="capitalize mx-4 text-secondary text-xl font-pacifico">
+      {{text}}
+    </span>
+    <hr class="w-7 h-[3px] bg-secondary border-0" />
+  </div>
+</ng-template>
+
+<ng-template #oneSide>
+  <div
+    [ngClass]="{'justify-start': elementPosition === 'left', 'justify-center': elementPosition === 'center', 'justify-end': elementPosition === 'rigth' }"
+    class="w-full flex flex-row items-center  my-2">
+    <hr *ngIf="side==='left'" class="w-7 h-[3px] bg-secondary border-0" />
+    <span [ngClass]="side==='left'?'ml-4':'mr-4'" class="text-secondary text-xl font-pacifico">
+      {{text}}
+    </span>
+    <hr *ngIf="side==='rigth'" class="w-7 h-[3px] bg-secondary border-0" />
+  </div>
+</ng-template>

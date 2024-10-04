@@ -1,0 +1,8 @@
+.hover-increase-height {
+  transition: height 1s ease-in-out; /* Aggiunge una transizione per l'animazione */
+}
+
+.hover-increase-height:hover {
+  justify-content: flex-start;
+  height: 150%; /* Cambia la percentuale a seconda di quanto vuoi ingrandire l'altezza */
+}

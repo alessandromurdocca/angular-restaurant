@@ -1,0 +1,19 @@
+<app-hero [heroTitle]="pageTitle"></app-hero>
+<div class="flex flex-col justify-center pt-6 bg-white">
+
+  <app-line-with-text [text]="pageTitle"></app-line-with-text>
+  <h1 class=" text-center text-4xl font-extrabold font-nunito">Contact For Any Query</h1>
+  <div class="flex justify-between my-10 px-6">
+    @for (item of contacts; track $index) {
+    <div class="flex flex-col">
+      <app-line-with-text [text]="item.contactTitle" isOnlyOneSide="left"
+        [elementPosition]="'left'"></app-line-with-text>
+      <div class="flex items-center text-base">
+        <fa-icon class="text-secondary" [icon]="mailIcon"></fa-icon>
+        <span class="ml-2">{{item.contact}}</span>
+      </div>
+    </div>
+    }
+  </div>
+  <app-form [typeForm]="'map'"></app-form>
+</div>
